@@ -64,6 +64,7 @@ dependencies:
   - numpy=1.16.5=py36h7e9f1db_0
   - numpy-base=1.16.5=py36hde5b4d6_0
   - olefile=0.46=py36_0
+  - openssl=1.1.1
   - pcre=8.43=he6710b0_0
   - pillow=6.1.0=py36h34e0f95_0
   - pip=19.2.2=py36_0
@@ -110,6 +111,5 @@ dependencies:
     - future==0.17.1
     - gym==0.9.1
     - pyglet==1.4.4
-    - openssl=1.1.1=h7b6447c_0
 prefix: /home/tungnd13/miniconda3/envs/e2c
 
