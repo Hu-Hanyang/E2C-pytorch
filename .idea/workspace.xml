@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19e1a639-4c54-4243-a481-a64dd3425deb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/E2C.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/E2C.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2c_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/e2c_model.py" afterDir="false" />
-    </list>
+    <list default="true" id="19e1a639-4c54-4243-a481-a64dd3425deb" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -293,8 +288,16 @@
       <workItem from="1569245762970" duration="6989000" />
       <workItem from="1668985048610" duration="158000" />
       <workItem from="1668985219597" duration="1501000" />
-      <workItem from="1669060790705" duration="5076000" />
+      <workItem from="1669060790705" duration="5513000" />
     </task>
+    <task id="LOCAL-00001" summary="feat: try to reimplement the results.">
+      <created>1669074792212</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1669074792212</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -357,6 +360,8 @@
       <path value="$PROJECT_DIR$/tf_e2c" />
       <path value="$PROJECT_DIR$/e2c" />
     </ignored-roots>
+    <MESSAGE value="feat: try to reimplement the results." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: try to reimplement the results." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/datasets_py$sample_planar.coverage" NAME="sample_planar Coverage Results" MODIFIED="1669060815119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
