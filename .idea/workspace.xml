@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19e1a639-4c54-4243-a481-a64dd3425deb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="19e1a639-4c54-4243-a481-a64dd3425deb" name="Default Changelist" comment="feat: something I don't know what they are.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -138,12 +136,6 @@
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
-  </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager" selected="Python.sample_planar">
     <configuration name="draw_planar_env" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -288,6 +280,7 @@
       <workItem from="1668985048610" duration="158000" />
       <workItem from="1668985219597" duration="1501000" />
       <workItem from="1669060790705" duration="6259000" />
+      <workItem from="1669938459712" duration="180000" />
     </task>
     <task id="LOCAL-00001" summary="feat: try to reimplement the results.">
       <created>1669074792212</created>
@@ -303,7 +296,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669075101812</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat: try to reimplement the results.">
+      <created>1669938625462</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669938625462</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -367,7 +367,8 @@
       <path value="$PROJECT_DIR$/e2c" />
     </ignored-roots>
     <MESSAGE value="feat: try to reimplement the results." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: try to reimplement the results." />
+    <MESSAGE value="feat: something I don't know what they are." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: something I don't know what they are." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/data/data/planar/before-00003.jpg" />
