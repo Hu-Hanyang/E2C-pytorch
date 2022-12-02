@@ -15,3 +15,11 @@ python train_e2c.py --env=planar  --batch_size=32 --lr=0.0001 --lam=0.25 --num_i
 bug:
 
 RuntimeError: cuDNN error: CUDNN_STATUS_EXECUTION_FAILED
+
+
+
+```python
+python train_e2c.py --env=planar --propor=0.1 --batch_size=32 --lr=0.001 --num_iter=1000 --iter_save=800 --log_dir='hanyang_try' --seed=2
+```
+
+<img src="/localhome/hha160/projects/E2C-pytorch/debug1.png" style="zoom:50%;" />
