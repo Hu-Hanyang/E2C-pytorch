@@ -13,7 +13,8 @@ git clone https://github.com/tungnd1705/E2C-pytorch.git
 ```
 
 Install the dependencies as listed in `env.yml` and activate the environment
-
+Attention: make use the cuda version matches your environment 
+           check cuda version: nvidia-smi
 ```
 conda env create -f e2c.yml
 
