@@ -23,3 +23,7 @@ python train_e2c.py --env=planar --propor=0.1 --batch_size=32 --lr=0.001 --num_i
 ```
 
 <img src="/localhome/hha160/projects/E2C-pytorch/debug1.png" style="zoom:50%;" />
+
+
+
+python train_e2c.py --env=planar --propor=0.01 --batch_size=32 --lr=0.001 --num_iter=20 --iter_save=16 --log_dir='hanyang_try' --seed=2

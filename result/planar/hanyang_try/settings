@@ -1,12 +1,12 @@
 {
   "env": "planar",
-  "propor": 0.1,
+  "propor": 0.01,
   "batch_size": 32,
   "lr": 0.001,
   "decay": 0.001,
   "lam": 0.25,
-  "num_iter": 1000,
-  "iter_save": 800,
+  "num_iter": 20,
+  "iter_save": 16,
   "log_dir": "hanyang_try",
   "seed": 2
 }
