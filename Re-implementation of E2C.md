@@ -27,3 +27,6 @@ python train_e2c.py --env=planar --propor=0.1 --batch_size=32 --lr=0.001 --num_i
 
 
 python train_e2c.py --env=planar --propor=0.01 --batch_size=32 --lr=0.001 --num_iter=20 --iter_save=16 --log_dir='hanyang_try' --seed=2
+
+2022/12/3
+python train_e2c.py --env=planar --propor=0.75 --batch_size=128 --lr=0.0001 --num_iter=5000 --iter_save=1000 --log_dir='noraml_train1' --seed=3047
