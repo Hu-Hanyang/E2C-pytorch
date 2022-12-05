@@ -13,8 +13,8 @@ git clone https://github.com/tungnd1705/E2C-pytorch.git
 ```
 
 Install the dependencies as listed in `env.yml` and activate the environment:
+** Recommend: Install pytorch according to the official website first; then install gym==0.18.3; other tools could be installed after running the ``train_e2c.py`` with your own setting.
 
-(Attention: make use the cuda version matches your environment. Use command 'nvidia-smi' to check your cuda version.)
 ```
 conda env create -f e2c.yml
 
