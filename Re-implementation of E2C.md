@@ -30,3 +30,15 @@ python train_e2c.py --env=planar --propor=0.01 --batch_size=32 --lr=0.001 --num_
 
 2022/12/3
 python train_e2c.py --env=planar --propor=0.75 --batch_size=128 --lr=0.0001 --num_iter=5000 --iter_save=1000 --log_dir='noraml_train1' --seed=3047
+
+2022/12/4
+python train_e2c.py --env=planar --propor=0.75 --batch_size=128 --lr=0.0001 --num_iter=5000 --iter_save=1000 --log_dir='noraml_train2' --seed=1997
+
+2022/12/5
+pendulum data: N = 15,000
+python sample_pendulum_data.py --sample_size=15000
+python train_e2c.py --env=pendulum --propor=0.75 --batch_size=128 --lr=0.0003 --lam=1 --num_iter=5000 --iter_save=1000 --log_dir='noraml_train2' --seed=1997
+
+cartepole 
+python sample_cartpole_data.py --sample_size=15000
+python train_e2c.py --env=pendulum --propor=0.75 --batch_size=128 --lr=0.0001 --lam=1 --num_iter=5000 --iter_save=1000 --log_dir='noraml_train2' --seed=1997
