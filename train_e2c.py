@@ -128,7 +128,7 @@ def plot_preds(model, env, num_eval):
 
 def main(args):
     env_name = args.env
-    assert env_name in ['planar', 'pendulum']
+    assert env_name in ['planar', 'pendulum', 'cartpole']
     propor = args.propor
     batch_size = args.batch_size
     lr = args.lr

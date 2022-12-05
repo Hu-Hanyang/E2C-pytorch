@@ -41,4 +41,4 @@ python train_e2c.py --env=pendulum --propor=0.75 --batch_size=128 --lr=0.0003 --
 
 cartepole 
 python sample_cartpole_data.py --sample_size=15000
-python train_e2c.py --env=pendulum --propor=0.75 --batch_size=128 --lr=0.0001 --lam=1 --num_iter=5000 --iter_save=1000 --log_dir='noraml_train2' --seed=1997
+python train_e2c.py --env=cartpole --propor=0.75 --batch_size=128 --lr=0.0001 --lam=1 --num_iter=5000 --iter_save=1000 --log_dir='cartpole_train' --seed=3047
