@@ -3,10 +3,10 @@
 ### Hanyang
 
 ### 1. Data generating
-
-1. planar: finished;
-2. cartpole: finished
-3. pendulum: 
+python sample_{env_name}_data.py --sample_size={sample_size}
+1. planar: python sample_planar_data.py --sample_size=3000; finished;
+2. cartpole: python sample_cartpole_data.py --sample_size=15000; finised.
+3. pendulum: python sample_pendulum_data.py --sample_size=15000 # AttributeError: 'PendulumEnv' object has no attribute 'step_from_state'
 
 ### 2. Training:
 

@@ -14,10 +14,11 @@ width, height = 48 * 2, 48
 def render(state):
     # need two observations to restore the Markov property
     before1 = state
-    before2 = env.step_from_state(state, np.array([0]))
+    before2 = env.step(state, np.array([0])) # here: TypeError: step() takes 2 positional arguments but 3 were given
     return map(env.render_state, (before1[0], before2[0]))
 
 def sample_pendulum(sample_size, output_dir='data/pendulum', step_size=1, apply_control=True, num_shards=10):
+    env = gym.make('Pendulum-v0').env
     assert sample_size % num_shards == 0
 
     samples = []
@@ -25,6 +26,7 @@ def sample_pendulum(sample_size, output_dir='data/pendulum', step_size=1, apply_
     if not path.exists(output_dir):
         os.makedirs(output_dir)
 
+    state = env.reset()
     for i in trange(sample_size):
         """
         for each sample:
