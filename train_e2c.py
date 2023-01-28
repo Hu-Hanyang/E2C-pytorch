@@ -49,7 +49,7 @@ def train(model, train_loader, lam, optimizer):
 
     num_batches = len(train_loader)
     for i, (x, u, x_next) in enumerate(train_loader, 0):
-        x = x.view(-1, model.obs_dim).double().to(device)
+        x = x.view(-1, model.obs_dim).double().to(device)  # how to preprocess the input data
         u = u.double().to(device)
         x_next = x_next.view(-1, model.obs_dim).double().to(device)
         optimizer.zero_grad()
@@ -181,7 +181,7 @@ def main(args):
                               global_step=i)
             print('Saving the model.............')
 
-            torch.save(model.state_dict(), result_path + '/model_' + str(i + 1))
+            torch.save(model.state_dict(), result_path + '/model_' + str(i + 1), _use_new_zipfile_serialization=False)
             with open(result_path + '/loss_' + str(i + 1), 'w') as f:
                 f.write('\n'.join([str(state_loss), str(next_state_loss)]))
 
