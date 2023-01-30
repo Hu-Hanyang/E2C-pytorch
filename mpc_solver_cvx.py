@@ -1,5 +1,5 @@
-from casadi import *
-import math
+import cvxpy as cp
+import numpy as np
 
 class Solver:
     """
@@ -27,10 +27,4 @@ class Solver:
             state: np.array, shape: [predict_steps+1, state_dimension]
             controls: np.array, shape: [predict_steps, control_dimension]
         """
-        z = SX.sym('z', self.z_dim) 
-        u = SX.sym('u', self.u_dim)
 
-        # dynamics
-        self.f = self.dynamics(x=x_init, u=u) # the format doesn't match
-        
-        
