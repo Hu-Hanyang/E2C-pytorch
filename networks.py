@@ -131,6 +131,31 @@ class PlanarTransition(Transition):
         )
         super(PlanarTransition, self).__init__(net, z_dim, u_dim)
 
+    # def dynamics(self, z_bar_t, q_z_t, u_t):
+    #     """
+    #     :param z_bar_t: the reference point
+    #     :param Q_z_t: the distribution q(z|x)
+    #     :param u_t: the action taken
+    #     :return: the predicted q(z^_t+1 | z_t, z_bar_t, u_t)
+    #     """
+    #     h_t = self.net(z_bar_t)
+    #     B_t = self.fc_B(h_t)
+    #     o_t = self.fc_o(h_t)
+
+    #     v_t, r_t = self.fc_A(h_t).chunk(2, dim=1)
+    #     v_t = torch.unsqueeze(v_t, dim=-1)
+    #     r_t = torch.unsqueeze(r_t, dim=-2)
+
+    #     A_t = torch.eye(self.z_dim).repeat(z_bar_t.size(0), 1, 1).cuda() + torch.bmm(v_t, r_t)
+
+    #     B_t = B_t.view(-1, self.z_dim, self.u_dim)
+
+    #     mu_t = q_z_t.mean
+
+    #     mean = A_t.bmm(mu_t.unsqueeze(-1)).squeeze(-1) + B_t.bmm(u_t.unsqueeze(-1)).squeeze(-1) + o_t
+
+    #     return mean, NormalDistribution(mean)
+
 class PendulumEncoder(Encoder):
     def __init__(self, obs_dim = 4608, z_dim = 3):
         net = nn.Sequential(

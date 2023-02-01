@@ -15,9 +15,9 @@ class Solver:
         """
         self.z_dim = model.z_dim  # latent state dimension
         self.u_dim = model.u_dim  # control dimensions
-        self.trans = model.transition # here needs to be revised!!!
-        self.reparam = model.reparam
         self.encoder = model.encoder
+        self.reparam = model.reparam
+        self.trans = model.dynamics 
         self.T = 10  # prediction horizon
 
     def mpcsolver(self, x_init):
@@ -38,11 +38,12 @@ class Solver:
         u = cp.Variable((self.u_dim, self.T))
         cost = 0
         constr = []
+        # preprocess the real input raw image x_t
         mu, logvar = self.encoder(x_init)
         z0 = self.reparam(mu, logvar).numpy()
         for t in range(self.T):
             cost += cp.quad_form(z[:, t+1], Rz) + cp.quad_form(u[:, t], Ru)
-            constr += [z[:, t+1] == self.trans(z[:, t], u[:, t])] # here maybe lies the problem
+            constr += [z[:, t+1] == self.trans(z=z[:, t], q_z=0, u=u[:, t])] # here maybe lies the problem
         constr += [z[:, 0] == z0]
         problem = cp.Problem(cp.Minimize(cost), constr)
         problem.solve()

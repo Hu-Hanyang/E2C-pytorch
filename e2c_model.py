@@ -75,9 +75,6 @@ class E2C(nn.Module):
         x_next_pred = self.decode(z_next)
         return x_next_pred
 
-    def dynamics(self, x, u):
-        mu, logvar = self.encoder(x)
-        z = self.reparam(mu, logvar)
-        q_z = NormalDistribution(mu, logvar)
-        z_next, q_z_next_pred = self.transition(z, q_z, u)
+    def dynamics(self, z, q_z, u):
+        z_next, q_z_next_pred = self.trans(z, q_z, u)
         return z_next
