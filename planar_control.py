@@ -1,10 +1,10 @@
 import torch
 from e2c_model import E2C
+from planar_solver import Solver   
 
 # load the tarned representation model
 model = E2C(obs_dim=1600, z_dim=2, u_dim=2, env='planar') # according to the settings in file train_e2c.py
 model.load_state_dict(torch.load('result/planar/normal_train2/model_5000'))
-print(model.trans.forward())
 
 # set up the controller
 

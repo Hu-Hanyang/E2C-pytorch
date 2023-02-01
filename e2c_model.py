@@ -20,6 +20,7 @@ class E2C(nn.Module):
         # self.decoder.apply(init_weights)
         self.trans = trans(z_dim=z_dim, u_dim=u_dim)
         # self.trans.apply(init_weights)
+        self.dynamics = self.trans.dynamics
 
     def encode(self, x):
         """
@@ -74,7 +75,3 @@ class E2C(nn.Module):
 
         x_next_pred = self.decode(z_next)
         return x_next_pred
-
-    def dynamics(self, z, q_z, u):
-        z_next, q_z_next_pred = self.trans(z, q_z, u)
-        return z_next

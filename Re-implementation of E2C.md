@@ -15,6 +15,7 @@ python sample_planar_data.py --sample_size=3000
 problem: while generating:
 $z_{t+1} \sim Q_{\psi}(z|z, u) = N(A_t \mu_t + B_tu_t+o_t, C_t)$
 The calculation of $\mu_t$ depends on the input $x_t$, however in the mpc controller, we only have one input image and the rest latent states $z_{t+i}$ is generated from the model.
+Current solution: $z_next = A*z + B*u + o$.
 
 ## 2. cartepole
 ### data generation

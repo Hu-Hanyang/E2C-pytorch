@@ -43,10 +43,15 @@ class Solver:
         z0 = self.reparam(mu, logvar).numpy()
         for t in range(self.T):
             cost += cp.quad_form(z[:, t+1], Rz) + cp.quad_form(u[:, t], Ru)
-            constr += [z[:, t+1] == self.trans(z=z[:, t], q_z=0, u=u[:, t])] # here maybe lies the problem
+            constr += [z[:, t+1] == self.trans(z[:, t], u[:, t])] # here maybe lies the problem
         constr += [z[:, 0] == z0]
         problem = cp.Problem(cp.Minimize(cost), constr)
         problem.solve()
+        return u.value[0]
+
+    def lqrsolver(self):
+        pass
+    
 
 
 
