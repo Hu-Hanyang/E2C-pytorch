@@ -20,9 +20,9 @@ class Solver:
         self.trans = model.dynamics 
         self.T = 10  # prediction horizon
 
-    def mpcsolver(self, x_init):
+    def mpcsolver1(self, x_init):
         """
-        MPC solver based on the E2C model
+        MPC solver1 based on the E2C model
         Parameters:
             x_init: tensor, shape:[]
                 raw pictures.
@@ -48,6 +48,9 @@ class Solver:
         problem = cp.Problem(cp.Minimize(cost), constr)
         problem.solve()
         return u.value[0]
+    
+    def mpcsolver2(self, x_init):
+        pass
 
     def lqrsolver(self):
         pass

@@ -102,6 +102,7 @@ class PlanarEncoder(Encoder):
         )
         super(PlanarEncoder, self).__init__(net, obs_dim, z_dim)
 
+
 class PlanarDecoder(Decoder):
     def __init__(self, z_dim = 2, obs_dim = 1600):
         net = nn.Sequential(
@@ -130,6 +131,7 @@ class PlanarTransition(Transition):
             nn.ReLU()
         )
         super(PlanarTransition, self).__init__(net, z_dim, u_dim)
+        
 
     def dynamics(self, z_bar_t, u_t):
         """

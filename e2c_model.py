@@ -8,7 +8,7 @@ torch.set_default_dtype(torch.float64)
 class E2C(nn.Module):
     def __init__(self, obs_dim, z_dim, u_dim, env='planar'):
         super(E2C, self).__init__()
-        enc, dec, trans = load_config(env)
+        enc, dec, trans = load_config(env)  # initialize the corresponding class encoder, decoder and transition
 
         self.obs_dim = obs_dim
         self.z_dim = z_dim
@@ -20,7 +20,12 @@ class E2C(nn.Module):
         # self.decoder.apply(init_weights)
         self.trans = trans(z_dim=z_dim, u_dim=u_dim)
         # self.trans.apply(init_weights)
+
         self.dynamics = self.trans.dynamics
+        self.net = self.trans.net  # network to output the last layer before predicting A_t, B_t and o_t
+        self.fc_A = self.trans.fc_A
+        self.fc_B = self.trans.fc_B
+        self.fc_o = self.trans.fc_o
 
     def encode(self, x):
         """
@@ -75,3 +80,20 @@ class E2C(nn.Module):
 
         x_next_pred = self.decode(z_next)
         return x_next_pred
+    
+    def state_trans(self, z_bar_t, u_t):
+        # to calculate the state transition: z_next = A*z_bar_t + B*u_t + ot
+        h_t = self.net(z_bar_t) 
+        B_t = self.fc_B(h_t)
+        o_t = self.fc_o(h_t)
+
+        v_t, r_t = self.fc_A(h_t).chunk(2, dim=1)
+        v_t = torch.unsqueeze(v_t, dim=-1)
+        r_t = torch.unsqueeze(r_t, dim=-2)
+
+        A_t = torch.eye(self.z_dim).repeat(z_bar_t.size(0), 1, 1).cuda() + torch.bmm(v_t, r_t)
+        B_t = B_t.view(-1, self.z_dim, self.u_dim)
+
+        z_next = A_t.bmm(z_bar_t.unsqueeze(-1)).squeeze(-1) + B_t.bmm(u_t.unsqueeze(-1)).squeeze(-1) + o_t
+
+        return z_next
