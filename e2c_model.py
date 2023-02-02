@@ -91,7 +91,7 @@ class E2C(nn.Module):
         v_t = torch.unsqueeze(v_t, dim=-1)
         r_t = torch.unsqueeze(r_t, dim=-2)
 
-        A_t = torch.eye(self.z_dim).repeat(z_bar_t.size(0), 1, 1).cuda() + torch.bmm(v_t, r_t)
+        A_t = torch.eye(self.z_dim).repeat(z_bar_t.size(0), 1, 1) + torch.bmm(v_t, r_t)
         B_t = B_t.view(-1, self.z_dim, self.u_dim)
 
         z_next = A_t.bmm(z_bar_t.unsqueeze(-1)).squeeze(-1) + B_t.bmm(u_t.unsqueeze(-1)).squeeze(-1) + o_t
