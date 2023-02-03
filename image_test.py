@@ -21,7 +21,7 @@ samplers = {'planar': planar_sampler, 'pendulum': pendulum_sampler, 'cartpole': 
 num_eval = 10 # number of images evaluated on tensorboard
 
 dataset = datasets['planar']('./data/data/' + 'planar')
-x, u, x_next = dataset[0]
+x, u, x_next = dataset[-1]
 imgplot = plt.imshow(x.squeeze(), cmap='gray')
 plt.show()
 print (np.array(u, dtype=float))

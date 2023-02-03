@@ -51,14 +51,14 @@ class Solver:
         problem.solve()
         return u.value[0]
     
-    def mpcsolver2(self, x_init):
+    def mpcsolver2(self, x_init, x_goal):
         """
         MPC solver2 based on the E2C model
         Parameters:
-            x_init: tensor, shape:[]
+            x_init: tensor, 
                 raw pictures.
-            predict_steps: int
-                steps for predict horizon.
+            x_goal: tensor, 
+                goal state raw pictures.
         Returns:
             state: np.array, shape: [predict_steps+1, state_dimension]
             controls: np.array, shape: [predict_steps, control_dimension]
