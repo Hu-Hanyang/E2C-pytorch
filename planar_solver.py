@@ -1,7 +1,7 @@
 import cvxpy as cp
 import numpy as np
 from normal import *
-import ilqr
+from ilqr import *
 
 
 class Solver:

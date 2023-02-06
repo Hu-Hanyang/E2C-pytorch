@@ -12,6 +12,7 @@ import cvxpy as cp
 model = E2C(obs_dim=1600, z_dim=2, u_dim=2, env='planar').eval() # according to the settings in file train_e2c.py
 model.load_state_dict(torch.load('result/planar/normal_train3/model_5000')) 
 
+
 # set up the controller
 solver = Solver(model)
 
@@ -22,7 +23,6 @@ x0, u, x_next = dataset[1]
 # imgplot = plt.imshow(x.squeeze(), cmap='gray')
 # plt.show()
 x0 = x0.view(-1, model.obs_dim).double()  # x0.shape is torch.Size([1, 1600])
-
 
 
 # step1: take the image into the representation model to obtain the latent state
